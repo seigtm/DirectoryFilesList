@@ -6,7 +6,7 @@ namespace fs = std::filesystem;
 
 // Returns a vector of file name strings in some directory with some extension.
 std::vector<std::string> getDirectoryFiles(const fs::path &directory = fs::current_path(),
-                                           const std::vector<std::string> extension = {})
+                                           const std::vector<std::string> extensions = {})
 {
     // List of file names.
     std::vector<std::string> files{};
@@ -15,8 +15,8 @@ std::vector<std::string> getDirectoryFiles(const fs::path &directory = fs::curre
     {
         if (fs::is_regular_file(file))
         {
-            if (extension.empty() ||
-                std::find(extension.begin(), extension.end(), file.path().extension().string()) != (extension.end()))
+            if (extensions.empty() ||
+                std::find(extensions.begin(), extensions.end(), file.path().extension().string()) != (extensions.end()))
             {
                 files.push_back(file.path().filename().string());
             }
