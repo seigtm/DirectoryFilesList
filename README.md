@@ -15,7 +15,7 @@ auto fileList = getDirectoryFiles();
 ``` cpp
 auto fileList = getDirectoryFiles(fs::current_path(), {".exe"});
 ```
-> Returns the list of the names of all files in the current directory with the "*.png", "*.bmp" or "*.jpg" extension.
+> Returns the list of the names of all files in the current directory with the ".png", ".bmp" or ".jpg" extension.
 ``` cpp
 auto fileList = getDirectoryFiles(fs::current_path(), {".png", ".bmp", ".jpg"});
 ```
